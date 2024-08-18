@@ -1,0 +1,16 @@
+<h2> Envio de arquivos XML em segundo plano </h2>
+
+<section class='home'>
+  <div class="form-group">
+    <%= form_with url: import_file_path, method: :post do |f| %>
+      <hr>
+      <div class='form-group mt-3'>
+        <%= f.file_field :xml_file, class: "search_btn" %>
+      </div>
+      <hr>
+      <div class='label'>
+        <%= f.submit 'Enviar arquivo', class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</section>
