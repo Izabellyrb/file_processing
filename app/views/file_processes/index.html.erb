@@ -10,7 +10,7 @@
   </thead>
   <tbody>
     <% @file_processes.each do |file_process| %>
-    <% xml_data = file_process.parse_xml %> 
+    <% xml_data = file_process.parsed_xml %> 
       <tr>
         <td scope="row"><%= link_to xml_data.at_xpath("//nNF")&.text, file_process_path(file_process) %></td>
         <td scope="row"><%= file_process[:created_at].strftime("%d/%m/%Y %H:%M:%S") %></td>

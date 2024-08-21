@@ -1,6 +1,6 @@
   <h2>Relatório Fiscal</h2>
 
-  <% xml_data = @file_process.parse_xml %> 
+  <% xml_data = @file_process.parsed_xml %> 
 
   <h3>Dados do Documento Fiscal <%= xml_data.at_xpath("//nNF")&.text %></h3> 
   <ul>
