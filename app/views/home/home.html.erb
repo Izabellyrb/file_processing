@@ -2,10 +2,10 @@
 
 <section class='home'>
   <div class="form-group">
-    <%= form_with url: import_file_path, method: :post do |f| %>
+    <%= form_with url: import_file_file_processes_path, method: :post do |f| %>
       <hr>
       <div class='form-group mt-3'>
-        <%= f.file_field :xml_file, class: "search_btn" %>
+        <%= f.file_field :xml_file, class: "search_btn", required: true %>
       </div>
       <hr>
       <div class='label'>

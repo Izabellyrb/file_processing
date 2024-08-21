@@ -1,0 +1,29 @@
+
+/* Page Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fafafada;
+}
+
+header {
+display: flex;
+justify-content: center;
+height: 85px;
+background: #ebd5f1;
+}
+
+main {
+  padding: 1% 10%;
+}
+
+h1 {
+  font-size: 1.4rem;
+}
