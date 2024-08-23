@@ -1,0 +1,7 @@
+pt-BR:
+  file_process:
+    status:
+      waiting: 'Em processamento'
+      sent: 'Processado'
+
+
