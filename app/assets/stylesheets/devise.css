@@ -1,0 +1,152 @@
+body {
+  font-size: 16px;
+}
+
+.devise-container {
+  max-width: 30rem; 
+  margin: 5rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+.devise-title {
+  text-align: center;
+  color: #094D2E;
+  margin-bottom: 2rem;
+}
+
+.devise-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field {
+  margin-bottom: 1.5rem;
+}
+
+.form-field-check {
+  display: flex;
+}
+
+.checkbox {
+  margin: 0.1rem 0.5rem 0.5rem 0 
+}
+
+.form-label {
+  display: block;
+  color: #333;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.4rem;
+}
+
+.error-messages {
+  color: red;
+  margin-bottom: 1.5rem;
+}
+
+.notification {
+  margin-bottom: 1.5rem;
+  color: #e97f02;
+}
+
+.form-actions {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: #3d9970;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #094D2E;
+}
+
+.cancel-title {
+  margin-top: 0.5rem;
+  color: #5e5e5e;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.cancel-account {
+  text-align: center;
+}
+
+.cancel-button {
+  width: 100%;
+  background-color: #d9534f;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background-color: #c9302c;
+}
+
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+  color: #3d9970;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.login-container, .edit-container, .forgot-password-container {
+  max-width: 30rem;
+}
+
+.login-title, .edit-title, .forgot-password-title {
+  color: #094D2E;
+}
+
+.error-messages {
+  color: red;
+  margin-bottom: 1.2rem; 
+}
+
+.error-container {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  color: #721c24;
+}
+
+.error-title {
+  font-size: 1.125rem;
+  margin-bottom: 0.625rem; 
+}
+
+.error-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.error-item {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}

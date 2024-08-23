@@ -1,8 +1,8 @@
-  <h2>Relatório Fiscal</h2>
+  <h2 class= "title">Relatório Fiscal</h2>
 
   <% xml_data = @file_process.parsed_xml %> 
 
-  <h3>Dados do Documento Fiscal <%= xml_data.at_xpath("//nNF")&.text %></h3> 
+  <h3 class= "subtitle">Dados do Documento Fiscal <%= xml_data.at_xpath("//nNF")&.text %></h3> 
   <ul>
     <li><strong>Id:</strong> <%= @file_process.id %></li>
     <li><strong>Número de Série:</strong> <%= xml_data.at_xpath("//serie")&.text %></li>
@@ -10,14 +10,16 @@
     <li><strong>Data e Hora de Emissão:</strong> <%= xml_data.at_xpath("//dhEmi")&.text %></li>
   </ul>
 
-  <ul><strong>Dados do Emitente:</strong> 
+<p class= "subtitle"><strong>Dados do Emitente:</strong></p>
+  <ul>
   <% xml_data.xpath("//emit").each do |emit| %>
     <li><strong>CNPJ:</strong> <%= emit.at_xpath("CNPJ")&.text %></li>
     <li><strong>Nome:</strong> <%= emit.at_xpath("xNome")&.text %></li>
     <li><strong>Nome Fantasia:</strong> <%= emit.at_xpath("xFant")&.text %></li>
   </ul>
     
-  <ul><strong>Endereço do Emitente:</strong>
+  <p class= "subtitle"><strong>Endereço do Emitente:</strong></p>
+  <ul>
     <li><strong>Logradouro:</strong> <%= emit.at_xpath("enderEmit/xLgr")&.text %></li>
     <li><strong>Número:</strong> <%= emit.at_xpath("enderEmit/nro")&.text %></li>
     <li><strong>Complemento:</strong> <%= emit.at_xpath("enderEmit/xCpl")&.text %></li>
@@ -34,13 +36,15 @@
   <% end %>
   </ul>
 
-  <ul><strong>Dados do Destinatário:</strong> 
+  <p class= "subtitle"><strong>Dados do Destinatário:</strong> </p>
+  <ul>
   <% xml_data.xpath("//dest").each do |dest| %>
     <li><strong>CNPJ:</strong> <%= dest.at_xpath("CNPJ")&.text %></li>
     <li><strong>Nome:</strong> <%= dest.at_xpath("xNome")&.text %></li>
   </ul>
     
-  <ul><strong>Endereço do Destinatário:</strong>
+  <p class= "subtitle"><strong>Endereço do Destinatário:</strong> </p>
+  <ul>
     <li><strong>Logradouro:</strong> <%= dest.at_xpath("enderDest/xLgr")&.text %></li>
     <li><strong>Número:</strong> <%= dest.at_xpath("enderDest/nro")&.text %></li>
     <li><strong>Bairro:</strong> <%= dest.at_xpath("enderDest/xBairro")&.text %></li>
@@ -54,7 +58,7 @@
   <% end %>
   </ul>
 
-  <h3>Produtos Listados</h3>
+  <p class= "subtitle"><strong>Produtos Listados</strong></p>
   <table class= "table table-hover">
     <thead>
       <tr>
@@ -80,7 +84,7 @@
     </tbody>
   </table>
 
-  <h3>Impostos Associados</h3>
+  <p class= "subtitle"><strong>Impostos Associados</strong></p>
     <table class= "table table-hover">
     <thead>
       <tr>
@@ -100,8 +104,9 @@
     </tbody>
   </table>
 
-  <h3>Totalizadores</h3>
+  <p class= "subtitle"><strong>Totalizadores</strong></p>
   <p> valores totais </p>
 
-<%= link_to "Voltar", root_path , class: "btn btn-outline-primary"%>
+<%= link_to "Voltar", root_path , class: "button" %>
   
+<!-- separar em partials -- >

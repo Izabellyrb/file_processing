@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class FileProcess < ApplicationRecord
-  # enum status: { waiting: 0, sent: 2 }
+  enum status: { waiting: 0, sent: 2 }
 
   has_one_attached :xml_file
 

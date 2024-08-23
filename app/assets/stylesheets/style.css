@@ -1,9 +1,10 @@
-
-/* Page Styles */
-
 * {
   margin: 0;
   padding: 0;
+}
+
+html {
+  font-size: 16px;
 }
 
 body {
@@ -11,13 +12,33 @@ body {
   flex-direction: column;
   justify-content: center;
   background-color: #fafafada;
+  font-size: 1.2rem
 }
 
-header {
+nav {
 display: flex;
 justify-content: center;
-height: 85px;
+height: 20%;
 background: #ebd5f1;
+padding: 0 20%
+}
+
+.logo_link {
+  width: 10%;
+}
+
+.logo_link img {
+  width: 100%;
+}
+
+#navbarNav {
+  justify-content: space-between;
+}
+
+.login_items {
+  display: flex;
+  justify-content: space-between;
+  width: 10%;
 }
 
 main {
@@ -26,4 +47,58 @@ main {
 
 h1 {
   font-size: 1.4rem;
+}
+
+/* home */
+.container {
+  display: flex;
+  height: 80vh;
+}
+
+.left-side, .right-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-side p {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.left-side img, .right-side img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+.button {
+  width: 8%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: #3d9970;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #094D2E;
+  color: white;
+  text-decoration: none;
+}
+
+.title {
+  color: #094D2E;
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  color: #094D2E;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
 }
