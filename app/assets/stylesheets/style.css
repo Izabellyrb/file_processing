@@ -37,8 +37,8 @@ padding: 0 20%
 
 .login_items {
   display: flex;
-  justify-content: space-between;
-  width: 10%;
+  justify-content: space-evenly;
+  width: 20%;
 }
 
 main {
@@ -84,12 +84,23 @@ h1 {
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
+  align-self: center;
 }
 
-.button:hover {
+.button:hover, .login_button:hover {
   background-color: #094D2E;
   color: white;
   text-decoration: none;
+}
+
+.login {
+  width: 40%;
+  text-align: center;
+}
+
+.logout {
+  width: 100%;
+  padding: .5rem 2rem;
 }
 
 .title {
