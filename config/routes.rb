@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   mount Sidekiq::Web => '/sidekiq'
 
-  resources :file_processes, only: [:show, :index] do
+  resources :file_processes, only: [:new, :show, :index] do
     collection do
       post :import_file
     end
