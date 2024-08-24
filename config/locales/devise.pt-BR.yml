@@ -62,13 +62,38 @@ pt-BR:
         other: "Não foi possível salvar %{resource}: %{count} erros."
 
   helpers:
-    submit:
-      sign_up: "Cadastrar-se"
-      log_in: "Entrar"
-      log_out: "Sair"
+    sessions:
+      new:
+        remember_me: "Lembre-se de mim"
+    registrations:
+      edit:
+        title: "Editar"
+        current_password: "Senha Atual"
+        update: "Atualizar"
+        unhappy: "Está insatisfeito?"
+        cancel_my_account: "Cancelar minha conta"
+        characters_minimum: "Mínimo de %{resource} caracteres"
+        password_confirmation: "Confirme a senha"
+        back: "Voltar"
+        password_info: "Deixe em branco se você não quiser alterar" 
+        password_confirmation_info: "Nós precisamos da sua senha atual para confirmar suas alterações"
+      new:
+        old_member?: "Já possuo uma conta"
     labels:
       email: "E-mail"
       password: "Senha"
       remember_me: "Lembrar-me"
-    links:
-      forgot_password: "Esqueceu sua senha?"
+      edit_profile: "Editar perfil"
+      logout: "Sair"
+      sign_up: "Cadastrar"
+      login: "Entrar"
+    passwords:
+      new:
+        forgot_your_password: "Esqueceu sua senha?"
+        confirmation_instructions: "Não recebeu informações de confirmação?"
+        unlock_instructions: "Não recebeu informações de desbloqueio?"
+    shared:
+      links:
+        sign_in: "Entrar"
+        sign_up: "Cadastrar"
+

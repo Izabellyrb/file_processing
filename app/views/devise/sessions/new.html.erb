@@ -4,28 +4,28 @@
 </head>
 <body>
 <div class="devise-container login-container">
-  <h2 class="devise-title">Log in</h2>
+  <h2 class="devise-title"><%= t('helpers.sessions.new.login')%></h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'devise-form' }) do |f| %>
     <div class="form-field">
-      <%= f.label :email, class: 'form-label' %><br />
+      <%= f.label :email, t('helpers.labels.email'), class: 'form-label' %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-input' %>
     </div>
 
     <div class="form-field">
-      <%= f.label :password, class: 'form-label' %><br />
+      <%= f.label :password, t('helpers.labels.password'), class: 'form-label' %><br />
       <%= f.password_field :password, autocomplete: "current-password", class: 'form-input' %>
     </div>
 
     <% if devise_mapping.rememberable? %>
       <div class="form-field-check">
         <%= f.check_box :remember_me, class: 'checkbox' %>
-        <%= f.label :remember_me, class: 'form-label' %>
+        <%= f.label :remember_me,  t('helpers.sessions.new.remember_me'), class: 'form-label' %>
       </div>
     <% end %>
 
     <div class="form-actions">
-      <%= f.submit "Log in", class: 'submit-button' %>
+      <%= f.submit  t('helpers.labels.login'), class: 'submit-button' %>
     </div>
   <% end %>
 

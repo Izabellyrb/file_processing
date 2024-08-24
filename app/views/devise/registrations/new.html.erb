@@ -3,31 +3,31 @@
 </head>
 
 <div class="devise-container signup-container">
-  <h2 class="devise-title">Sign up</h2>
+  <h2 class="devise-title"><%= t('helpers.labels.sign_up')%></h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'devise-form' }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource, class: 'error-messages' %>
 
     <div class="form-field">
-      <%= f.label :email, class: 'form-label' %>
+      <%= f.label :email, t('helpers.labels.email'), class: 'form-label' %>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-input' %>
     </div>
 
     <div class="form-field">
-      <%= f.label :password, class: 'form-label' %>
+      <%= f.label :password, t('helpers.labels.password'), class: 'form-label' %>
       <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <em><%= t('helpers.registrations.edit.characters_minimum', resource: @minimum_password_length) %></em>
       <% end %>
       <%= f.password_field :password, autocomplete: "new-password", class: 'form-input' %>
     </div>
 
     <div class="form-field">
-      <%= f.label :password_confirmation, class: 'form-label' %>
+      <%= f.label :password_confirmation, t('helpers.registrations.edit.password_confirmation'), class: 'form-label' %>
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-input' %>
     </div>
 
     <div class="form-actions">
-      <%= f.submit "Sign up", class: 'submit-button' %>
+      <%= f.submit t('helpers.labels.sign_up'), class: 'submit-button' %>
     </div>
   <% end %>
 
