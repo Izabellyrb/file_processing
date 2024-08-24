@@ -1,10 +1,12 @@
 class FileProcessesController < ApplicationController
   before_action :xml_file, :check_file, only: [:import_file]
-  before_action :authenticate_user!, only: %i[index show]
+  before_action :authenticate_user!, only: %i[new index show]
 
   def index
     @file_processes = FileProcess.all
   end
+
+  def new; end
 
   def import_file
     @file_process = FileProcess.new(file_data: parse_xml)
