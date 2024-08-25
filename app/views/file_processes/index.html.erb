@@ -1,23 +1,25 @@
 <h2 class= "title"> Meus arquivos enviados </h2>
 
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Nota Fiscal</th>
-      <th scope="col">Data de envio</th>
-      <th scope="col">Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @file_processes.each do |file_process| %>
-    <% xml_data = file_process.parsed_xml %> 
+  <table class="table table-hover">
+    <thead>
       <tr>
-        <td scope="row"><%= link_to xml_data.at_xpath("//nNF")&.text, file_process_path(file_process) %></td>
-        <td scope="row"><%= file_process[:created_at].strftime("%d/%m/%Y %H:%M:%S") %></td>
-        <td scope="row"><%= t("file_process.status.#{file_process[:status]}") %></td>
+        <th scope="col">Nota Fiscal</th>
+        <th scope="col">Data de envio</th>
+        <th scope="col">Status</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @invoices.each do |invoice| %>
+        <tr>
+          <td scope="row"><%= link_to invoice.invoice_number, file_process_path(invoice) %></td>
+          <td scope="row"><%= invoice[:created_at].strftime("%d/%m/%Y %H:%M:%S") %></td>
+          <td scope="row"><%= t("invoices.status.#{invoice.status}") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<%= "Nenhum arquivo enviado" unless @invoices.present? %> <br><br>
 
 <%= link_to "Voltar", root_path , class: "button" %>
