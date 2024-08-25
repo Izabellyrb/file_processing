@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_18_011258) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_25_003135) do
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -23,9 +23,45 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_18_011258) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "file_processes", force: :cascade do |t|
-    t.string "file_data"
+  create_table "invoices", force: :cascade do |t|
+    t.string "serie"
+    t.string "invoice_number"
+    t.datetime "invoice_date"
+    t.integer "sender_id", null: false
+    t.integer "recipient_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "status", default: 0
+    t.index ["recipient_id"], name: "index_invoices_on_recipient_id"
+    t.index ["sender_id"], name: "index_invoices_on_sender_id"
+  end
+
+  create_table "recipients", force: :cascade do |t|
+    t.string "document"
+    t.string "name"
+    t.string "address"
+    t.string "address_number"
+    t.string "address_complement"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.string "cep"
+    t.string "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "senders", force: :cascade do |t|
+    t.string "document"
+    t.string "name"
+    t.string "address"
+    t.string "address_number"
+    t.string "address_complement"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.string "cep"
+    t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,4 +78,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_18_011258) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "invoices", "recipients"
+  add_foreign_key "invoices", "senders"
 end

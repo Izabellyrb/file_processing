@@ -3,15 +3,15 @@ class FileProcessesController < ApplicationController
   before_action :authenticate_user!, only: %i[new index show]
 
   def index
-    @file_processes = FileProcess.all
+    @invoices = Invoice.all
   end
 
   def new; end
 
   def import_file
-    @file_process = FileProcess.new(file_data: parse_xml)
+    @import_file = ImportFileService.new(parse_xml)
 
-    if @file_process.save
+    if @import_file.run
       flash[:notice] = "Arquivo enviado com sucesso!"
     else
       flash[:alert] = "Arquivo não enviado. Tente novamente mais tarde."
@@ -21,7 +21,7 @@ class FileProcessesController < ApplicationController
   end
 
   def show
-    @file_process = FileProcess.find(params[:id])
+    @invoice = Invoice.find(params[:id])
   end
 
   private
