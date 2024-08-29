@@ -3,6 +3,7 @@
   <table class="table table-hover">
     <thead>
       <tr>
+        <th scope="col">Id</th>
         <th scope="col">Nota Fiscal</th>
         <th scope="col">Data de envio</th>
         <th scope="col">Status</th>
@@ -12,6 +13,7 @@
     <tbody>
       <% @invoices.each do |invoice| %>
         <tr>
+          <td scope="row"><%= invoice[:id] %></td>
           <td scope="row"><%= link_to invoice.invoice_number, file_process_path(invoice) %></td>
           <td scope="row"><%= invoice[:created_at].strftime("%d/%m/%Y %H:%M:%S") %></td>
           <td scope="row"><%= t("invoices.status.#{invoice.status}") %></td>

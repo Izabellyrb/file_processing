@@ -1,0 +1,17 @@
+<p class= "subtitle"><strong>Dados do Emitemente:</strong></p>
+<ul>
+  <li><strong>CNPJ:</strong> <%=  @invoice.sender.document %></li>
+  <li><strong>Nome:</strong> <%=  @invoice.sender.name %></li>
+</ul>
+  
+<p class= "subtitle"><strong>Endereço do Emitente:</strong></p>
+<ul>
+  <li><strong>Logradouro:</strong> <%=  @invoice.sender.address %></li>
+  <li><strong>Número:</strong> <%=  @invoice.sender.address_number %></li>
+  <li><strong>Complemento:</strong> <%= @invoice.sender.address_complement %></li>
+  <li><strong>Município:</strong> <%=  @invoice.sender.city %></li>
+  <li><strong>UF:</strong> <%=  @invoice.sender.state %></li>
+  <li><strong>CEP:</strong> <%=  @invoice.sender.cep %></li>
+  <li><strong>País:</strong> <%=  @invoice.sender.country %></li>
+  <li><strong>Telefone:</strong> <%=  @invoice.sender.phone %></li>
+</ul>  

@@ -7,3 +7,7 @@
     <li><strong>Número da Nota Fiscal:</strong> <%=  @invoice.invoice_number %></li>
     <li><strong>Data e Hora de Emissão:</strong> <%=  @invoice.invoice_date %></li>
   </ul>
+
+  <%= render 'sender' %>
+  <%= render 'recipient' %>
+  <%= render 'products' %>

@@ -1,0 +1,17 @@
+<p class= "subtitle"><strong>Dados do Destinatário:</strong> </p>
+<ul>
+  <li><strong>CNPJ:</strong> <%= @invoice.recipient.document %></li>
+  <li><strong>Nome:</strong> <%= @invoice.recipient.name %></li>
+</ul>
+
+<p class= "subtitle"><strong>Endereço do Destinatário:</strong> </p>
+<ul>
+  <li><strong>Logradouro:</strong> <%= @invoice.recipient.address %></li>
+  <li><strong>Número:</strong> <%= @invoice.recipient.address_number %></li>
+  <li><strong>Complemento:</strong> <%= @invoice.recipient.address_complement || ""%></li>
+  <li><strong>Município:</strong> <%= @invoice.recipient.city %></li>
+  <li><strong>UF:</strong> <%= @invoice.recipient.state %></li>
+  <li><strong>CEP:</strong> <%= @invoice.recipient.cep %></li>
+  <li><strong>País:</strong> <%= @invoice.recipient.country %></li>
+  <li><strong>Telefone:</strong> <%= @invoice.recipient.phone %></li>
+</ul>
