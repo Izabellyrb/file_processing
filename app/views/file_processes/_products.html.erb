@@ -1,0 +1,33 @@
+<p class= "subtitle"><strong>Produtos Listados</strong></p>
+<table class= "table table-hover">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>NCM</th>
+      <th>CFOP</th>
+      <th>Unidade</th>
+      <th>Quantidade</th>
+      <th>Valor Unitário</th>
+      <th>ICMS</th>
+      <th>IPI</th>
+      <th>PIS</th>
+      <th>COFINS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product_item| %>
+    <tr>
+      <td><%= product_item.name %></td>
+      <td><%= product_item.ncm %></td>
+      <td><%= product_item.cfop %></td>
+      <td><%= product_item.unit_com %></td>
+      <td><%= product_item.quantity_com %></td>
+      <td><%= product_item.total_amount %></td>
+      <td><%= product_item.icms %></td>
+      <td><%= product_item.ipi %></td>
+      <td><%= product_item.pis %></td>
+      <td><%= product_item.cofins %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

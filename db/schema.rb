@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_25_003135) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_28_235501) do
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -34,6 +34,23 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_25_003135) do
     t.integer "status", default: 0
     t.index ["recipient_id"], name: "index_invoices_on_recipient_id"
     t.index ["sender_id"], name: "index_invoices_on_sender_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.string "ncm"
+    t.string "cfop"
+    t.string "unit_com"
+    t.decimal "quantity_com", precision: 10, scale: 2
+    t.decimal "total_amount", precision: 10, scale: 2
+    t.decimal "icms", precision: 15, scale: 2
+    t.decimal "ipi", precision: 15, scale: 2
+    t.decimal "pis", precision: 15, scale: 2
+    t.decimal "cofins", precision: 15, scale: 2
+    t.integer "invoice_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["invoice_id"], name: "index_products_on_invoice_id"
   end
 
   create_table "recipients", force: :cascade do |t|
@@ -80,4 +97,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_25_003135) do
 
   add_foreign_key "invoices", "recipients"
   add_foreign_key "invoices", "senders"
+  add_foreign_key "products", "invoices"
 end

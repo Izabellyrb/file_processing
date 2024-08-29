@@ -3,13 +3,13 @@ class FileProcessesController < ApplicationController
   before_action :authenticate_user!, only: %i[new index show]
 
   def index
-    @invoices = Invoice.all
+    @invoices = Invoice.order(created_at: :desc)
   end
 
   def new; end
 
   def import_file
-    @import_file = ImportFileService.new(parse_xml)
+    @import_file = BaseService.new(parse_xml)
 
     if @import_file.run
       flash[:notice] = "Arquivo enviado com sucesso!"
@@ -22,6 +22,7 @@ class FileProcessesController < ApplicationController
 
   def show
     @invoice = Invoice.find(params[:id])
+    @products = @invoice.products
   end
 
   private
