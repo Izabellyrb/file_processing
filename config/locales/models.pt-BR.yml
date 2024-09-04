@@ -3,5 +3,16 @@ pt-BR:
     status:
       waiting: 'Em processamento'
       sent: 'Processado'
-
-
+  activerecord:
+    models:
+      invoice: 'Nota Fiscal' 
+    attributes:
+      invoice:
+        invoice_number: 'Nº de nota fiscal'
+    errors:
+      models:
+        invoice: 
+          attributes:
+            invoice_number:
+              blank: 'é obrigatório'
+              taken: 'já foi registrado'

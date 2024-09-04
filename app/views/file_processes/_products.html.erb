@@ -22,11 +22,11 @@
       <td><%= product_item.cfop %></td>
       <td><%= product_item.unit_com %></td>
       <td><%= product_item.quantity_com %></td>
-      <td><%= product_item.total_amount %></td>
-      <td><%= product_item.icms %></td>
-      <td><%= product_item.ipi %></td>
-      <td><%= product_item.pis %></td>
-      <td><%= product_item.cofins %></td>
+      <td><%= number_to_currency(product_item.total_amount) %></td>
+      <td><%= number_to_currency(product_item.icms) %></td>
+      <td><%= number_to_currency(product_item.ipi) %></td>
+      <td><%= number_to_currency(product_item.pis) %></td>
+      <td><%= number_to_currency(product_item.cofins) %></td>
     </tr>
     <% end %>
   </tbody>

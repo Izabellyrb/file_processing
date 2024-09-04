@@ -14,7 +14,7 @@ class FileProcessesController < ApplicationController
     if @import_file.run
       flash[:notice] = "Arquivo enviado com sucesso!"
     else
-      flash[:alert] = "Arquivo não enviado. Tente novamente mais tarde."
+      flash[:alert] = @import_file.errors.map(&:to_s).join(" | ")
     end
 
     redirect_to new_file_process_path

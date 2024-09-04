@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
 class BaseService
-  attr_reader :import_file
+  attr_reader :import_file, :errors
 
   def initialize(import_file)
     @import_file = import_file
+    @errors = []
   end
 
   def run
@@ -15,6 +16,7 @@ class BaseService
     ImportProductService.new(import_file, invoice).run
   rescue StandardError => e
     Rails.logger.error("BaseService Error: #{e.message}")
+    @errors << e.message
     false
   end
 end
