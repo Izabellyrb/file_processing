@@ -1,17 +1,22 @@
-<p class= "subtitle"><strong>Dados do Destinatário:</strong> </p>
-<ul>
-  <li><strong>CNPJ:</strong> <%= @invoice.recipient.document %></li>
-  <li><strong>Nome:</strong> <%= @invoice.recipient.name %></li>
-</ul>
-
-<p class= "subtitle"><strong>Endereço do Destinatário:</strong> </p>
-<ul>
-  <li><strong>Logradouro:</strong> <%= @invoice.recipient.address %></li>
-  <li><strong>Número:</strong> <%= @invoice.recipient.address_number %></li>
-  <li><strong>Complemento:</strong> <%= @invoice.recipient.address_complement || ""%></li>
-  <li><strong>Município:</strong> <%= @invoice.recipient.city %></li>
-  <li><strong>UF:</strong> <%= @invoice.recipient.state %></li>
-  <li><strong>CEP:</strong> <%= @invoice.recipient.cep %></li>
-  <li><strong>País:</strong> <%= @invoice.recipient.country %></li>
-  <li><strong>Telefone:</strong> <%= @invoice.recipient.phone %></li>
-</ul>
+<section class="info"> 
+  <p class="subtitle"><strong>Dados do Destinatário:</strong> </p>
+  <div class="sec_info">
+    <% recipient = @invoice.recipient %>
+    <div class="info_rows">
+      <p><strong>CNPJ:</strong> <%= recipient.document %></p>
+      <p><strong>Nome:</strong> <%= recipient.name %></p>
+    </div>
+    <div class="info_rows">
+      <p><strong>Logradouro:</strong> <%= recipient.address %></p>
+      <p><strong>Número:</strong> <%= recipient.address_number %></p>
+      <p><strong>Complemento:</strong> <%= recipient.address_complement || ""%></p>
+      <p><strong>Município:</strong> <%= recipient.city %></p>
+      <p><strong>UF:</strong> <%= recipient.state %></p>
+    </div>
+    <div class="info_rows">
+      <p><strong>CEP:</strong> <%= recipient.cep %></p>
+      <p><strong>País:</strong> <%= recipient.country %></p>
+      <p><strong>Telefone:</strong> <%= recipient.phone %></p>
+    </div>
+  </div>
+</section>

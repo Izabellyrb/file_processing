@@ -104,11 +104,45 @@ h1 {
 
 .title {
   color: #094D2E;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .subtitle {
+  padding: 1% 0;
   color: #094D2E;
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
+}
+
+.info {
+  padding: 0 2%;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 1%;
+}
+
+.main_info {
+  display: flex;
+  flex-direction: row;
+}
+
+.main_info p {
+  padding: 1%;
+  margin: 0
+}
+
+.sec_info {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.sec_info p {
+  padding: 0 1%;
+}
+
+.info_rows {
+  display: flex;
+  flex-direction: row;
 }

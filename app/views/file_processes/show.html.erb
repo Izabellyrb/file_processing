@@ -1,12 +1,15 @@
 <h2 class= "title">Relatório Fiscal</h2>
 
-<h3 class= "subtitle">Dados do Documento Fiscal <%= @invoice.invoice_number %></h3> 
-  <ul>
-    <li><strong>Id:</strong> <%= @invoice.id %></li>
-    <li><strong>Número de Série:</strong> <%= @invoice.serie %></li>
-    <li><strong>Número da Nota Fiscal:</strong> <%=  @invoice.invoice_number %></li>
-    <li><strong>Data e Hora de Emissão:</strong> <%=  @invoice.invoice_date %></li>
-  </ul>
+<h3 class="subtitle">Dados do Documento Fiscal <%= @invoice.invoice_number %></h3>
+
+<section class="info"> 
+  <div class="main_info">
+    <p><strong>Id:</strong> <%= @invoice.id %></p>
+    <p><strong>Número de Série:</strong> <%= @invoice.serie %></p>
+    <p><strong>Número da Nota Fiscal:</strong> <%=  @invoice.invoice_number %></p>
+    <p><strong>Data e Hora de Emissão:</strong> <%=  l(@invoice.invoice_date, format: :short) %></p>
+  </div>
+</section>
 
   <%= render 'sender' %>
   <%= render 'recipient' %>

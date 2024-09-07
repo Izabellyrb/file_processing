@@ -30,4 +30,15 @@
     </tr>
     <% end %>
   </tbody>
+  <tfoot>
+    <tr>
+      <th colspan="4" class="text-center">Total:</th>
+      <th><%= total_items(@products, :quantity_com)%></th>
+      <th><%= number_to_currency(total_items(@products, :total_amount)) %></th>
+      <th><%= number_to_currency(total_items(@products, :icms)) %></th>
+      <th><%= number_to_currency(total_items(@products, :ipi)) %></th>
+      <th><%= number_to_currency(total_items(@products, :pis)) %></th>
+      <th><%= number_to_currency(total_items(@products, :cofins)) %></th>
+    </tr>
+  </tfoot>  
 </table>
