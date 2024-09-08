@@ -11,13 +11,8 @@ class FileProcessesController < ApplicationController
   def new; end
 
   def import_file
-    @import_file = BaseService.new(parse_xml)
-
-    if @import_file.run
-      flash[:notice] = "Arquivo enviado com sucesso!"
-    else
-      flash[:alert] = @import_file.errors.map(&:to_s).join(" | ")
-    end
+    FileProcessorJob.perform_async(xml_file.read)
+    flash[:notice] = "Arquivo enviado para processamento."
 
     redirect_to new_file_process_path
   end
@@ -31,11 +26,6 @@ class FileProcessesController < ApplicationController
 
   def xml_file
     params[:xml_file]
-  end
-
-  def parse_xml
-    xml_data = Nokogiri::XML(xml_file.read)
-    xml_data.remove_namespaces!
   end
 
   def check_file

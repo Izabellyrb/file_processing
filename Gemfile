@@ -30,7 +30,7 @@ gem "pry-remote", "~> 0.1.8"
 
 gem "redis"
 
-gem "sidekiq"
+gem 'sidekiq', '~> 6.5'
 
 gem "devise"
 

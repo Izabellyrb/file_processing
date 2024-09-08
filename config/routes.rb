@@ -8,9 +8,9 @@ Rails.application.routes.draw do
 
   get "up" => "rails/health#show", as: :rails_health_check
 
-  mount Sidekiq::Web => '/sidekiq'
+  mount Sidekiq::Web => "/sidekiq"
 
-  resources :file_processes, only: [:new, :show, :index] do
+  resources :file_processes, only: %i[new show index] do
     collection do
       post :import_file
     end
