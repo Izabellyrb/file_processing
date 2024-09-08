@@ -34,11 +34,13 @@ gem "sidekiq"
 
 gem "devise"
 
-gem 'bootstrap', '~> 5.3'
+gem "bootstrap", "~> 5.3"
 
-gem 'sassc-rails', '>= 2.1.0'
+gem "sassc-rails", ">= 2.1.0"
 
-gem 'nokogiri'
+gem "nokogiri"
+
+gem "kaminari"
 
 group :development, :test do
   gem "rspec-rails", "~> 6.1.0"

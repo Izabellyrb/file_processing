@@ -3,7 +3,9 @@ class FileProcessesController < ApplicationController
   before_action :authenticate_user!, only: %i[new index show]
 
   def index
-    @invoices = Invoice.order(created_at: :desc)
+    @invoices = Invoice.order(created_at: :desc).page(params[:page])
+
+    index_filters
   end
 
   def new; end
@@ -42,5 +44,13 @@ class FileProcessesController < ApplicationController
     flash[:alert] = "Por favor, insira um arquivo no formato xml."
 
     redirect_to new_file_process_path
+  end
+
+  def index_filters
+    @invoices = @invoices.search_by_invoice_number(params[:invoice_number]) if params[:invoice_number].present?
+    @invoices = @invoices.search_by_status(params[:status]) if params[:status].present?
+    if params[:start_date].present? && params[:end_date].present? # rubocop:disable Style/GuardClause
+      @invoices = @invoices.search_by_created_at(params[:start_date], params[:end_date])
+    end
   end
 end

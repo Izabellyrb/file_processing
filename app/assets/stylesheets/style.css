@@ -19,7 +19,6 @@ nav {
 display: flex;
 justify-content: center;
 height: 20%;
-background: #ebd5f1;
 padding: 0 20%
 }
 
@@ -73,7 +72,6 @@ h1 {
   height: auto;
   display: block;
 }
-
 
 .button {
   padding: 0.5rem;
@@ -145,4 +143,28 @@ h1 {
 .info_rows {
   display: flex;
   flex-direction: row;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination .page-item .page-link {
+  color: #094D2E; 
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #3d9970; 
+  border-color: #3d9970;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2%;
+}
+
+.search .button {
+  margin: 0 2px;
 }
