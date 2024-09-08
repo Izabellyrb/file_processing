@@ -23,7 +23,7 @@ class ImportProductService < BaseService
       )
     end
   rescue StandardError => e
-    Rails.logger.error("ImportProductService Error: #{e.message}")
+    Rails.configuration.file_process_logger.error("ImportProductService Error")
     raise e
   end
 end

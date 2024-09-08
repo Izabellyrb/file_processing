@@ -15,7 +15,6 @@ class BaseService
 
     ImportProductService.new(import_file, invoice).run
   rescue StandardError => e
-    Rails.logger.error("BaseService Error: #{e.message}")
     @errors << e.message
     false
   end

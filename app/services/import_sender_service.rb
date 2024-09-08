@@ -14,7 +14,7 @@ class ImportSenderService < BaseService
       sender.phone = import_file.at_xpath("//enderEmit/fone")&.text
     end
   rescue StandardError => e
-    Rails.logger.error("ImportSenderService Error: #{e.message}")
+    Rails.configuration.file_process_logger.error("ImportSenderService Error")
     raise e
   end
 end

@@ -77,4 +77,17 @@ Rails.application.configure do
   config.action_controller.raise_on_missing_callback_actions = true
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.active_job.queue_adapter = :sidekiq
+
+  file_process_logger = ActiveSupport::Logger.new("log/file_processes.log", 1, 50.megabytes)
+  file_process_logger.level = Logger::INFO
+  file_process_logger.datetime_format = "%d-%m-%Y %H:%M:%S"
+
+  # log formatter
+  file_process_logger.formatter = proc do |severity, datetime, progname, msg|
+    "#{datetime.strftime('%d-%m-%Y %H:%M:%S')} [#{severity}] #{msg}\n"
+  end
+
+  config.file_process_logger = ActiveSupport::TaggedLogging.new(file_process_logger)
 end
