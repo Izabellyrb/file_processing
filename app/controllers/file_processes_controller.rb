@@ -39,7 +39,7 @@ class FileProcessesController < ApplicationController
   def index_filters
     @invoices = @invoices.search_by_invoice_number(params[:invoice_number]) if params[:invoice_number].present?
     @invoices = @invoices.search_by_status(params[:status]) if params[:status].present?
-    if params[:start_date].present? && params[:end_date].present? # rubocop:disable Style/GuardClause
+    if params[:start_date].present? && params[:end_date].present?
       @invoices = @invoices.search_by_created_at(params[:start_date], params[:end_date])
     end
   end

@@ -5,6 +5,14 @@ require:
   - rubocop-rails
   - rubocop-rspec
 
+Style/WordArray:
+Exclude:
+  - 'spec/models/invoice_spec.rb'
+
+Style/GuardClause
+Exclude:
+  - 'app/controllers/file_processes_controller.rb'
+
 Bundler/OrderedGems:
   TreatCommentsAsGroupSeparators: false
 
