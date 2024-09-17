@@ -63,4 +63,12 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+
+  config.active_job.queue_adapter = :test
+
+  file_process_logger = ActiveSupport::Logger.new("log/file_processes_test.log", 1, 50.megabytes)
+  file_process_logger.level = Logger::INFO
+  file_process_logger.datetime_format = "%d-%m-%Y %H:%M:%S"
+
+  config.file_process_logger = ActiveSupport::TaggedLogging.new(file_process_logger)
 end
