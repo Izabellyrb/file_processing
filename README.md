@@ -1,24 +1,61 @@
-# README
+# Projeto de Processamento de Arquivos XML
+### Descrição
+Este projeto foi desenvolvido para processar arquivos XML (NF-e), validar seu conteúdo e extrair dados específicos para visualizaação em relatório. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Funcionalidades
+- Upload de arquivos XML.
+- Validação de arquivos XML utilizando XSD.
+- Processamento assíncrono com Sidekiq.
+- Extração de dados de destinatários e remetentes a partir de tags XML.
+- Geração de logs personalizados para monitoramento do processamento.
+- Interface para visualizar os status dos arquivos processados.
 
-Things you may want to cover:
+### Tecnologias
+- Ruby on Rails 6
+- Sidekiq para jobs em background
+- Nokogiri para parsing de XML
+- FactoryBot para criação de dados de teste
+- Rspec para testes automatizados
+- SimpleCov para cobertura de testes
 
-* Ruby version
+### Instalação
+Pré-requisitos:
+- Ruby 3.3.3
+- Rails 6
+- Redis (necessário para o Sidekiq)
+- MySQL ou SQLite
 
-* System dependencies
+Passos
+Clone o repositório e instale as dependências:
 
-* Configuration
+```ruby
+bundle install
+```
 
-* Database creation
+- Configure o banco de dados:
 
-* Database initialization
+```ruby
+rails db:create db:migrate
+```
 
-* How to run the test suite
+- Inicie o Sidekiq:
 
-* Services (job queues, cache servers, search engines, etc.)
+```ruby
+bundle exec sidekiq
+```
 
-* Deployment instructions
+- Inicie o servidor:
 
-* ...
+```ruby
+rails server
+```
+### Testes
+Para rodar os testes automatizados, execute:
+
+```ruby
+bundle exec rspec
+```
+A cobertura dos testes pode ser gerada com o SimpleCov.
+
+### Logs
+Os logs de processamento de arquivos XML são salvos em log/file_processes.log. A configuração de log está no arquivo config/environments/development.rb.
