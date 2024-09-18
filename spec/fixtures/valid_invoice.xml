@@ -1,0 +1,32 @@
+<NFe>
+  <infNFe>
+    <emit>
+      <CNPJ>70000070000700</CNPJ>
+      <xNome>Teste Vendas</xNome>
+      <enderEmit>
+        <xLgr>Rua das Flores</xLgr>
+        <nro>8</nro>
+        <xCpl>sala 27</xCpl>
+        <xMun>Rio de Janeiro</xMun>
+        <UF>RJ</UF>
+        <xPais>Brasil</xPais>
+        <CEP>08000222</CEP>
+        <fone>40028944</fone>
+      </enderEmit>
+    </emit>
+    <dest>
+      <CNPJ>60000050000100</CNPJ>
+      <xNome>Teste Teste</xNome>
+      <enderDest>
+        <xLgr>Rua Teste</xLgr>
+        <nro>1</nro>
+        <xCpl>sala 808</xCpl>
+        <xMun>São Paulo</xMun>
+        <UF>SP</UF>
+        <xPais>Brasil</xPais>
+        <CEP>07000111</CEP>
+        <fone>40028922</fone>
+      </enderDest>
+    </dest>
+  </infNFe>
+</NFe>

@@ -3,7 +3,7 @@
 class ImportRecipientService < BaseService
   def run
     Recipient.find_or_create_by!(document: import_file.at_xpath("//dest/CNPJ")&.text) do |recipient|
-      recipient.name = import_file.at_xpath("//xNome")&.text
+      recipient.name = import_file.at_xpath("//dest/xNome")&.text
       recipient.address = import_file.at_xpath("//enderDest/xLgr")&.text
       recipient.address_number = import_file.at_xpath("//enderDest/nro")&.text
       recipient.address_complement = import_file.at_xpath("//enderDest/xCpl")&.text

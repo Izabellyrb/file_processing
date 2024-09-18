@@ -3,7 +3,7 @@
 class ImportSenderService < BaseService
   def run
     Sender.find_or_create_by!(document: import_file.at_xpath("//emit/CNPJ")&.text) do |sender|
-      sender.name = import_file.at_xpath("//xNome")&.text
+      sender.name = import_file.at_xpath("//emit/xNome")&.text
       sender.address = import_file.at_xpath("//enderEmit/xLgr")&.text
       sender.address_number = import_file.at_xpath("//enderEmit/nro")&.text
       sender.address_complement = import_file.at_xpath("//enderEmit/xCpl")&.text
