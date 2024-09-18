@@ -25,8 +25,8 @@ Pré-requisitos:
 - Redis (necessário para o Sidekiq)
 - MySQL ou SQLite
 
-Passos
-Clone o repositório e instale as dependências:
+### Passos
+- Clone o repositório e instale as dependências:
 
 ```ruby
 bundle install
@@ -59,3 +59,9 @@ A cobertura dos testes pode ser gerada com o SimpleCov.
 
 ### Logs
 Os logs de processamento de arquivos XML são salvos em log/file_processes.log. A configuração de log está no arquivo config/environments/development.rb.
+
+### Em Andamento
+- [] Aumento na cobertura de testes
+- [] Rollback nas transações dos Services
+- [] Refatoração de organização do CSS
+- [] Refatoração da validação (antes do job)
